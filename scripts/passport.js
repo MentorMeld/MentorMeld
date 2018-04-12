@@ -9,7 +9,18 @@ const keys = require('../config/keys');
 // user model
 const User = require('../models/user-model');
 
+// serializeUser
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
 
+// deserializeUser
+passport.deserializeUser((id, done) => {
+    User.findById(id)
+    .then(user => {
+        done(null, user);
+    });
+});
 
 
 passport.use(new GoogleStrategy({
@@ -19,7 +30,17 @@ passport.use(new GoogleStrategy({
     callbackURL: '/auth/google/callback'
 }, function (accessToken, refreshToken, profile, done) {
     // query database to find if user exists
-    User.create({
-        googleid: profile.id
-    }).then(user => done(null, user));
-}))
+    User.findOne({
+        where :{
+            googleid: profile.id
+        }
+    }).then((existingUser) => {
+        if (existingUser) {
+            return done(null, existingUser);
+        } else {
+            User.create({
+                googleid: profile.id
+            }).then(user => done(null, user));
+        }
+    })
+}));

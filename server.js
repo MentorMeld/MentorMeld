@@ -1,7 +1,12 @@
+// Packages
 const express = require("express");
 const bodyParser = require("body-parser");
 const passport = require('passport');
+const cookieSession = require('cookie-session');
+// Import keys for cookie sesion
+const keys = require('./config/keys');
 
+// express instance
 const app = express();
 const PORT = process.env.PORT || 3001;
 
