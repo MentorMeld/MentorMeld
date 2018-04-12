@@ -2,6 +2,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const passport = require('passport');
+
+// db model 
+require('./models/user-model');
 const cookieSession = require('cookie-session');
 // Import keys for cookie sesion
 const keys = require('./config/keys');
@@ -19,6 +22,14 @@ app.use(express.static("client/build"));
 
 // require passport script
 require('./scripts/passport');
+
+// tell express to use cookie-session
+app.use(
+  cookieSession({
+    // last 30 days before expire
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [keys.cookieKey]
+  }));
 
 // tell express to use passport to handle oauth
 app.use(passport.initialize());
