@@ -15,6 +15,10 @@ app.use(express.static("client/build"));
 // require passport script
 require('./scripts/passport');
 
+// tell express to use passport to handle oauth
+app.use(passport.initialize());
+app.use(passport.session());
+
 // require routes
 require('./routes/authRoutes')(app);
 
