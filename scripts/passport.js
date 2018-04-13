@@ -27,7 +27,7 @@ passport.use(new GoogleStrategy({
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
     // callback URL
-    callbackURL: '/auth/google/callback'
+    callbackURL: 'http://localhost:3000/api/current_user'
 }, function (accessToken, refreshToken, profile, done) {
     // query database to find if user exists
     User.findOne({
