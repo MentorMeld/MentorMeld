@@ -5,6 +5,14 @@ import React from 'react';
 import './navbar.css';
 
 const Navbar = () => (
+
+    <header>
+        <div className='logo'><h1>MentorMeld</h1></div>
+        <div className='navigation'>
+            <ul>
+                <li><a href='/auth/google'>Login</a></li>
+                <li><a href='/api/logout'>Logout</a></li>
+
     <div>
     <div className="top-bar" id="responsive-menu">
         <div className="top-bar-left">
@@ -13,6 +21,7 @@ const Navbar = () => (
                 <li><a href="#0">Dashboard</a></li>
                 <li><a href="#0">Post</a></li>
                 <li><a href="#0">Profile</a></li>
+
             </ul>
         </div>
     <div className="top-bar-right">

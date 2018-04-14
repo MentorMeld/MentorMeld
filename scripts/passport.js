@@ -26,21 +26,25 @@ passport.deserializeUser((id, done) => {
 passport.use(new GoogleStrategy({
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
-    // callback URL
-    callbackURL: 'http://localhost:3000/api/current_user'
+    callbackURL: '/auth/google/callback',
+    proxy: true
 }, function (accessToken, refreshToken, profile, done) {
     // query database to find if user exists
-    User.findOne({
-        where :{
-            googleid: profile.id
-        }
-    }).then((existingUser) => {
-        if (existingUser) {
-            return done(null, existingUser);
-        } else {
-            User.create({
+    process.nextTick(function(){
+        User.findOne({
+            where :{
                 googleid: profile.id
-            }).then(user => done(null, user));
-        }
+            }
+        }).then((existingUser) => {
+            if (existingUser) {
+                console.log(existingUser)
+                return done(null, existingUser);
+            } else {
+                console.log('else')
+                User.create({
+                    googleid: profile.id
+                }).then(user => done(null, user));
+            }
+        })
     })
 }));

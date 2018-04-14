@@ -5,13 +5,13 @@ import React from 'react';
 import './post.css';
 
 const Post = () => (
-    <div class="box">
+    <div className="box">
         <h3>Create New Posting</h3>
     
         <form>
         
         </form>
-    <div>
+    </div>
 );
 
 // export 
