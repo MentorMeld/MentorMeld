@@ -9,7 +9,8 @@ const Navbar = () => (
         <div className='logo'><h1>MentorMeld</h1></div>
         <div className='navigation'>
             <ul>
-                <li><a href='http://localhost:3001/auth/google'>Login</a></li>
+                <li><a href='/auth/google'>Login</a></li>
+                <li><a href='/api/logout'>Logout</a></li>
             </ul>
         </div>
 

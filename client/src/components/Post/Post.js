@@ -11,7 +11,7 @@ const Post = () => (
         <form>
         
         </form>
-    <div>
+    </div>
 );
 
 // export 
