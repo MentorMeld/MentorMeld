@@ -10,9 +10,9 @@ const Navbar = () => (
         <div className="top-bar-left">
             <ul className="dropdown menu" data-dropdown-menu>
                 <li className="menu-text">MentorMeld</li>
-                <li><a href="#0"><i className="fi-home style3"/>Dashboard</a></li>
-                <li><a href="#0"><i className="fi-results style3"/>Post</a></li>
-                <li><a href="#0"><i className="fi-widget style3"/>Profile</a></li>
+                <li><a href="../dash"><i className="fas-home style3"/>Dashboard</a></li>
+                <li><a href="../post"><i className="fas-results style3"/>Post</a></li>
+                <li><a href=""><i className="fas-widget style3"/>Profile</a></li>
             </ul>
         </div>
     <div className="top-bar-right">

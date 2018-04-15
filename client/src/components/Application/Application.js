@@ -5,8 +5,6 @@ import { withRouter } from "react-router-dom";
 // import styles
 import './application.css';
 
-// push profile info to autofill?
-
 class Application extends Component {
 
    constructor(props){
