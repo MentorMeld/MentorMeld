@@ -1,30 +1,30 @@
-// import react
-import React, { Component } from 'react';
-import { withRouter } from "react-router-dom";
+// // import react
+// import React, { Component } from 'react';
+// import { withRouter } from "react-router-dom";
 
-// import styles
-import './application.css';
+// // import styles
+// import './application.css';
 
-class Application extends Component {
+// class Application extends Component {
 
-   constructor(props){
-    super(props)
-   }
+//    constructor(props){
+//     super(props)
+//    }
 
-   navigate = () => {
-        const history = this.props.history.replace('/post')
-   }
+//    navigate = () => {
+//         const history = this.props.history.replace('/post')
+//    }
 
-    render(){
-        console.log(this.props)
-        return(
-            <div>
-                <h1>Dashboard</h1>
-                <button onClick={this.navigate}>nav</button>
-            </div>
-        )
-    }
-}
+//     render(){
+//         console.log(this.props)
+//         return(
+//             <div>
+//                 <h1>Dashboard</h1>
+//                 <button onClick={this.navigate}>nav</button>
+//             </div>
+//         )
+//     }
+// }
 
-// export 
-export default withRouter(Application);
+// // export 
+// export default withRouter(Application);

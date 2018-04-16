@@ -1,31 +1,47 @@
-// import react
-import React from 'react';
-
+// import class component from react
+import React, { Component } from 'react';
+// import the connect helper from react-redux
+import { connect } from 'react-redux';
 // import styles
 import './navbar.css';
 
-const Navbar = () => (
-    <div>
-    <div className="top-bar" id="responsive-menu">
-        <div className="top-bar-left">
-            <ul className="dropdown menu" data-dropdown-menu>
-                <li className="menu-text">MentorMeld</li>
-                <li><a href="../dash"><i className="fas-home style3"/>Dashboard</a></li>
-                <li><a href="../post"><i className="fas-results style3"/>Post</a></li>
-                <li><a href=""><i className="fas-widget style3"/>Profile</a></li>
-            </ul>
-        </div>
-    <div className="top-bar-right">
-        <ul className="menu">
-            <li><a href='/auth/google'>Login</a></li>
-            <li><a href='/api/logout'>Logout</a></li>
-            <li><input type="search" placeholder="Search" /></li>
-            <li><button type="button" className="button">Search</button></li>
-        </ul>
-    </div>
-    </div>
-    </div>
-);
+class Navbar extends Component {
+    renderContent() {
+        switch (this.props.auth) {
+            case null:
+                return;
+            case false:
+                return <li><a href="/auth/google">Login with Google</a></li>
+            default:
+                return <li><a href="/api/logout">Logout</a></li>
+        }
+    }
+    
+    
+    render() {
+        return (
+            <div>
+                <div className="top-bar" id="responsive-menu">
+                    <div className="top-bar-left">
+                        <ul className="dropdown menu" data-dropdown-menu>
+                            <li className="menu-text">MentorMeld</li>
+                            <li><a href="/dashboard"><i className="fas-home style3"/>Dashboard</a></li>
+                            <li><a href="/dashboard/newpost/"><i className="fas-results style3"/>Post</a></li>
+                            <li><a href=""><i className="fas-widget style3"/>Profile</a></li>
+                        </ul>
+                    </div>
+                    <div className="top-bar-right">
+                        <ul className="menu">
+                            {this.renderContent()}
+                            <li><input type="search" placeholder="Search" /></li>
+                            <li><button type="button" className="button">Search</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+};
 
 /*const Navbar = () => (
         <div className='logo'><h1>MentorMeld</h1></div>
@@ -54,5 +70,10 @@ const Navbar = () => (
     </div>
 );*/
 
+// calls the entire state object out of the redux store
+function mapStateToProps({ auth }) {
+    return { auth };
+}
+
 // export navbar
-export default Navbar;
+export default connect(mapStateToProps) (Navbar); 
