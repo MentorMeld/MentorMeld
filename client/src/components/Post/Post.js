@@ -1,18 +1,29 @@
 // import react
-import React from 'react';
+import React, { Component } from 'react';
 
 // import styles
 import './post.css';
 
-const Post = () => (
-    <div className="box">
-        <h3>Create New Posting</h3>
+class Post extends Component {
     
-        <form>
-        
-        </form>
-    </div>
-);
+    
+    
+    render() {
+        return (    
+            <div className="form-box">
+                <form className="form">
+                    <input
+                        value={this.state.firstName}
+                        name="firstName"
+                        onChange={this.handleInputChange}
+                        type="text"
+                    />
+
+                </form>
+            </div>
+        )
+    }    
+};
 
 // export 
 export default Post;
