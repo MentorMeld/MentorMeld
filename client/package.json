@@ -13,7 +13,6 @@
   "dependencies": {
     "axios": "^0.16.2",
     "foundation-sites": "^6.4.4-rc1",
-    "materialize-css": "^0.100.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.7",
