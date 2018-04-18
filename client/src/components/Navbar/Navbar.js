@@ -13,7 +13,14 @@ class Navbar extends Component {
             case false:
                 return <li><a href="/auth/google">Login with Google</a></li>
             default:
-                return <li><a href="/api/logout">Logout</a></li>
+                return (
+                    <div className="navigation-links">
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/dashboard/newpost">Post</a></li>
+                        <li><a href="/dashboard/profile">Profile</a></li>
+                        <li><a href="/api/logout">Logout</a></li>
+                    </div>    
+            );
         }
     }
     
@@ -25,16 +32,11 @@ class Navbar extends Component {
                     <div className="top-bar-left">
                         <ul className="dropdown menu" data-dropdown-menu>
                             <li className="menu-text">MentorMeld</li>
-                            <li><a href="/dashboard"><i className="fas-home style3"/>Dashboard</a></li>
-                            <li><a href="/dashboard/newpost/"><i className="fas-results style3"/>Post</a></li>
-                            <li><a href=""><i className="fas-widget style3"/>Profile</a></li>
                         </ul>
                     </div>
                     <div className="top-bar-right">
                         <ul className="menu">
                             {this.renderContent()}
-                            <li><input type="search" placeholder="Search" /></li>
-                            <li><button type="button" className="button">Search</button></li>
                         </ul>
                     </div>
                 </div>
