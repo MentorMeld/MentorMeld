@@ -12,12 +12,12 @@ import * as actions from '../actions';
 // import components
 import Navbar from './Navbar';
 // import Application from './components/Application';
-// import Post from './components/Post'
+import Post from './Post';
 
 // dummie components
 
 const Dashboard = () => <h2>Dashboard</h2>
-const NewPost = () => <h2>NewPost</h2>
+// const NewPost = () => <h2>NewPost</h2>
 const Landing = () => <h2>Landing</h2>
 
 class App extends Component {
@@ -36,7 +36,7 @@ class App extends Component {
                         displaying on the same page */}
                         <Route exact path="/" component={Landing} />
                         <Route exact path="/dashboard" component={Dashboard} />
-                        <Route path="/dashboard/newpost/" component={NewPost} />
+                        <Route path="/dashboard/newpost/" component={Post} />
                     </div>
                 </BrowserRouter>
             </div>
