@@ -1,14 +1,23 @@
-import React, { component } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import './dashboard.css';
 
 
 class Dashboard extends Component {
-
+    
 
     getData() {
-
+        axios.get('/api/dashboard')
+        .then(res => {
+            console.log(res);
+        }).catch(error => {
+            console.log(error);
+        })
     };
+
+    componentDidMount() {
+        this.getData();
+    }
 
     render() {
         return(
@@ -16,3 +25,4 @@ class Dashboard extends Component {
         )
     }
 }
+export default Dashboard;
