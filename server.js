@@ -5,6 +5,7 @@ const passport = require('passport');
 
 // db model 
 require('./models/user-model');
+require('./models/post-model');
 const cookieSession = require('cookie-session');
 // Import keys for cookie sesion
 const keys = require('./config/keys');

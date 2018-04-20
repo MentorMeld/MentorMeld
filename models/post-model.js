@@ -15,7 +15,7 @@ const Post = sequelize.define("post", {
         type: Sequelize.STRING
     },
     description: {
-        type: Sequelize.string
+        type: Sequelize.STRING
     }
 }, {
     timestamps: false

@@ -7,7 +7,7 @@
 var Sequelize = require('sequelize');
 
 // Create a mysql connection using sequelize
-var sequelize = new Sequelize('user', 'root', '', {
+var sequelize = new Sequelize('db_mentormeld', 'root', '', {
     host: 'localhost',
     dialect: 'mysql',
     pool: {
