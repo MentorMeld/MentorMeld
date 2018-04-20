@@ -11,7 +11,7 @@ const Post = sequelize.define("post", {
     email: {
         type: Sequelize.STRING
     },
-    tilte: {
+    title: {
         type: Sequelize.STRING
     },
     description: {
