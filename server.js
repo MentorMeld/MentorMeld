@@ -36,8 +36,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// require routes
+// require routes for auth
 require('./routes/authRoutes')(app);
+// require routes for db querys
+require('./routes/apiRoutes')(app);
 
 
 // Start the API server
