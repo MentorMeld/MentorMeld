@@ -5,20 +5,14 @@
 
   <testsuite name="login"
     errors="0" failures="0" hostname="" id="" package="login" skipped="0"
-    tests="2" time="17.85" timestamp="Fri, 20 Apr 2018 05:38:32 GMT">
+    tests="2" time="9.334" timestamp="Fri, 20 Apr 2018 06:26:35 GMT">
   
-    <testcase name="MentorMeld Login" classname="login" time="7.082" assertions="1">
+    <testcase name="MentorMeld Login" classname="login" time="6.095" assertions="1">
 
     
     </testcase>
   
-    <testcase name="part two" classname="login" time="10.77" assertions="5">
-
-    
-
-    
-
-    
+    <testcase name="part two" classname="login" time="3.239" assertions="2">
 
     
 
