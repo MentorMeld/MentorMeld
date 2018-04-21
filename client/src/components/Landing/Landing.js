@@ -1,7 +1,6 @@
 // import class component from react
-import React, { Component } from 'react';
-// import the connect helper from react-redux
-import { connect } from 'react-redux';
+import React from 'react';
+
 // import styles
 import './landing.css';
 // import images
