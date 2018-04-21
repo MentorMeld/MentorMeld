@@ -1,7 +1,10 @@
 .form-box {
-    padding: 10px;
+    background-color: #f9fbff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 30px;
     margin: auto;
-    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     width: 500px;
 }
 
