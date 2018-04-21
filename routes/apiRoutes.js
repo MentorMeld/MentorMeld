@@ -12,8 +12,16 @@ module.exports = function(app) {
         })
     });
 
-    // // POST route for saving a new volunteer post
-    // app.post('/dashboard/newpost', function(req, res) {
-
-    // });
+    // POST route for saving a new volunteer post
+    app.post('/api/newpost', function(req, res) {
+        db.create({
+            name: req.body.name,
+            email: req.body.email,
+            title: req.body.title,
+            description: req.body.description
+        })
+        .then(function(dbNewPost) {
+            console.log(dbNewPost);
+        })
+    });
 }
