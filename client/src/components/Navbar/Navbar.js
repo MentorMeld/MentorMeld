@@ -17,7 +17,6 @@ class Navbar extends Component {
                     <div className="navigation-links">
                         <li><a href="/dashboard">Dashboard</a></li>
                         <li><a href="/dashboard/newpost">Post</a></li>
-                        <li><a href="/dashboard/profile">Profile</a></li>
                         <li><a href="/api/logout">Logout</a></li>
                     </div>    
             );

@@ -14,12 +14,13 @@ import Navbar from './Navbar';
 // import Application from './components/Application';
 import Post from './Post';
 import Dashboard from './Dashboard';
+import Landing from './Landing';
 
 // dummie components
 
 // const Dashboard = () => <h2>Dashboard</h2>
 // const NewPost = () => <h2>NewPost</h2>
-const Landing = () => <h2>Landing</h2>
+// const Landing = () => <h2>Landing</h2>
 
 class App extends Component {
     componentDidMount() {
