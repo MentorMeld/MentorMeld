@@ -1,8 +1,9 @@
-// This file will hold the google passport oauth 
-// API keys.
-// add this file to the .gitignore 
-module.exports = {
-    googleClientID: '947364500303-51avjp9icef3hkmusoienttg72sv6qu1.apps.googleusercontent.com',
-    googleClientSecret: 'Pj5Nt5e9xQUej1Uye-ffRNV7',
-    cookieKey: 'jfasefowiefhskjfhksfhafe'
-};
+// // Keys.js- figure out what set of credentials to return
+if (process.env.NODE_ENV === 'production') {
+    // we are in production - return production set of keys
+    module.exports = require('./prod');
+} else {
+    // we are in development - return the dev keys
+    module.exports = require('./dev');
+}
+
