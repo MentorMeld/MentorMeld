@@ -5,6 +5,7 @@ import { Input, TextArea, FormBtn } from '../Form';
 // import styles
 import './post.css';
 
+
 class Post extends Component {
     state = {
         name: "",
@@ -35,17 +36,25 @@ class Post extends Component {
         })
         .then(function(response) {
             console.log(response);
+            // this.state.bind({
+            //     name: "",
+            //     title: "",
+            //     description: "",
+            //     email: ""                
+            // });
         })
         .catch(function (error) {
             console.log(error);
         })
-        console.log(this.state);
+        //console.log(this.state);
     };
     
     render() {
+        let isEnabled = this.state.name.length > 0 && this.state.title.length > 0 && this.state.description.length >0
+        && this.state.email.length > 0
         return (  
             <div className="form-box">
-                <h4>New Post:</h4>  
+                <h4>New Post:</h4>
                 <form className="form">
                     <Input
                         value={this.state.firstName}
@@ -75,9 +84,9 @@ class Post extends Component {
                     placeholder='Description'
                     />
 
-                    <FormBtn
-                        onClick={this.handleForumSubmit}
-                    >
+                    <FormBtn 
+                        disabled={!isEnabled}
+                        onClick={this.handleForumSubmit}>
                     Submit Post
                     </FormBtn>
                 </form>
