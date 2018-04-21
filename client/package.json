@@ -4,10 +4,12 @@
   "private": true,
   "proxy": {
     "/auth/google": {
-      "target": "http://localhost:3001"
+      //"target": "http://localhost:3001"
+      "origin": "${http://whispering-eyrie-49696.herokuapp.com/}"
     },
     "/api/*": {
-      "target": "http://localhost:3001"
+      //"target": "http://localhost:3001"
+      "origin": "${http://whispering-eyrie-49696.herokuapp.com/}"
     }
   },
   "dependencies": {
