@@ -84,7 +84,7 @@ class Post extends Component {
                     placeholder='Description'
                     />
 
-                    <FormBtn 
+                    <FormBtn id="SubmitPost"
                         disabled={!isEnabled}
                         onClick={this.handleForumSubmit}>
                     Submit Post
